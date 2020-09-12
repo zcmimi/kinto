@@ -1,59 +1,378 @@
 {
-    "inbounds": [
-        {
-            "port": 8888,
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "c95ef1d4-f3ac-4586-96e9-234a37dda068"
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws"
-            }
-        }
+  "log": {
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+  "api": {
+    "services": [
+      "HandlerService",
+      "LoggerService",
+      "StatsService"
     ],
-
-    "outbounds": [
-        {
-            "protocol": "freedom"
-        },
-        {
-            "protocol": "blackhole",
-            "tag": "blocked"
-        },
-        {
-            "protocol": "socks",
-            "tag": "sockstor",
-            "settings": {
-                "servers": [
-                    {
-                        "address": "127.0.0.1",
-                        "port": 9050
-                    }
-                ]
-            }
-        }
-    ],
-
-    "routing": {
-        "rules": [
-            {
-                "type": "field",
-                "outboundTag": "sockstor",
-                "domain": [
-                    "geosite:tor"
-                ]
-            },
-            {
-                "type": "field",
-                "outboundTag": "blocked",
-                "domain": [
-                    "geosite:category-ads-all"
-                ]
-            }
-        ]
+    "tag": "api"
+  },
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserUplink": true,
+        "statsUserDownlink": true
+      },
+      "1": {
+        "statsUserUplink": true,
+        "statsUserDownlink": true
+      }
+    },
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true
     }
+  },
+  "inbounds": [
+    {
+      "port": 40322,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "alterId": 10,
+            "email": "zcmimi@outlook.com",
+            "id": "ed949d80-e065-11ea-8ba5-0d41ffd79e92"
+          },
+          {
+            "alterId": 10,
+            "email": "zjp666@vip.qq.com",
+            "id": "9a460220-e2ec-11ea-90b6-a94f71fca204"
+          },
+          {
+            "alterId": 10,
+            "email": "2395111907@qq.com",
+            "id": "60be71f0-e674-11ea-845e-77d267dbd760"
+          },
+          {
+            "alterId": 10,
+            "email": "1392520436@qq.com",
+            "id": "5d2c81e0-e6d2-11ea-bfb5-03f91f6c4d9b"
+          },
+          {
+            "alterId": 10,
+            "email": "1397728635@qq.com",
+            "id": "8097e370-e74c-11ea-bfb5-03f91f6c4d9b"
+          },
+          {
+            "alterId": 10,
+            "email": "2462658016@qq.com",
+            "id": "e774d190-e911-11ea-bfb5-03f91f6c4d9b"
+          },
+          {
+            "alterId": 10,
+            "email": "2514208411@qq.com",
+            "id": "5e08ca30-e919-11ea-bfb5-03f91f6c4d9b"
+          },
+          {
+            "alterId": 10,
+            "email": "minyuchengmin@outlook.com",
+            "id": "0ae71d90-eb24-11ea-9008-dfd6607f3287"
+          },
+          {
+            "alterId": 10,
+            "email": "zc_mimi@qq.com",
+            "id": "f4d569d0-eb41-11ea-9008-dfd6607f3287"
+          },
+          {
+            "alterId": 10,
+            "email": "zcmimiksp@gmail.com",
+            "id": "8c15ddd0-eb91-11ea-a51c-e1332d872094"
+          },
+          {
+            "alterId": 10,
+            "email": "3282770879@qq.com",
+            "id": "3ef69590-ecfd-11ea-bf0d-4f54e2b1c969"
+          },
+          {
+            "alterId": 10,
+            "email": "1617189552@qq.com",
+            "id": "9bf2d5d0-edc3-11ea-bd6b-9584371a008d"
+          },
+          {
+            "alterId": 10,
+            "email": "771203653@qq.com",
+            "id": "d6ed65e0-ef3c-11ea-886b-edf733507a0a"
+          },
+          {
+            "alterId": 10,
+            "email": "961450645@qq.com",
+            "id": "c45a6f70-ef98-11ea-84ed-1750b12129bd"
+          },
+          {
+            "alterId": 10,
+            "email": "cy@cr.cx",
+            "id": "7246a3c0-f00b-11ea-b887-fdf91feeb97f"
+          },
+          {
+            "alterId": 10,
+            "email": "mosebyquqztmm@gmail.com",
+            "id": "26e81ed0-f039-11ea-8a59-b74d51a987d3"
+          },
+          {
+            "alterId": 10,
+            "email": "whatz2333@88.com",
+            "id": "d3e0f400-f10f-11ea-8a59-b74d51a987d3"
+          },
+          {
+            "alterId": 10,
+            "email": "lixuanzhang0629@163.com",
+            "id": "6fd7e360-f1dc-11ea-91a4-edc3871e78a7"
+          },
+          {
+            "alterId": 10,
+            "email": "1374662798@qq.com",
+            "id": "fa28a730-f25d-11ea-91a4-edc3871e78a7"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/vry"
+        }
+      },
+      "tag": "WsTlsProxy"
+    },
+    {
+      "protocol": "mtproto",
+      "port": 34789,
+      "tag": "tg-in",
+      "settings": {
+        "users": [
+          {
+            "secret": "b84bf9412072282d7332a64da1dbaa5b"
+          }
+        ]
+      }
+    },
+    {
+      "protocol": "socks",
+      "port": 36463,
+      "settings": {
+        "auth": "password",
+        "accounts": [
+          {
+            "user": "ed949d80-e065-11ea-8ba5-0d41ffd79e92",
+            "passwd": "8d950739f1410beb486adca1dfe0f67a"
+          },
+          {
+            "user": "9a460220-e2ec-11ea-90b6-a94f71fca204",
+            "passwd": "c8837b23ff8aaa8a2dde915473ce0991"
+          },
+          {
+            "user": "60be71f0-e674-11ea-845e-77d267dbd760",
+            "passwd": "4ff17208748000e0ee3a2371a85ed877"
+          },
+          {
+            "user": "5d2c81e0-e6d2-11ea-bfb5-03f91f6c4d9b",
+            "passwd": "1f898edab38c8daf7d9323e091c004c9"
+          },
+          {
+            "user": "8097e370-e74c-11ea-bfb5-03f91f6c4d9b",
+            "passwd": "7c82aa82a9d6476eb1eae2ee57b7852b"
+          },
+          {
+            "user": "e774d190-e911-11ea-bfb5-03f91f6c4d9b",
+            "passwd": "36f17c3939ac3e7b2fc9396fa8e953ea"
+          },
+          {
+            "user": "5e08ca30-e919-11ea-bfb5-03f91f6c4d9b",
+            "passwd": "a40613d97087b04ac24d01d770530266"
+          },
+          {
+            "user": "0ae71d90-eb24-11ea-9008-dfd6607f3287",
+            "passwd": "48e816680047a01ad5d7f7cdc7a6afe1"
+          },
+          {
+            "user": "f4d569d0-eb41-11ea-9008-dfd6607f3287",
+            "passwd": "098f6bcd4621d373cade4e832627b4f6"
+          },
+          {
+            "user": "8c15ddd0-eb91-11ea-a51c-e1332d872094",
+            "passwd": "098f6bcd4621d373cade4e832627b4f6"
+          },
+          {
+            "user": "3ef69590-ecfd-11ea-bf0d-4f54e2b1c969",
+            "passwd": "8a6f2805b4515ac12058e79e66539be9"
+          },
+          {
+            "user": "9bf2d5d0-edc3-11ea-bd6b-9584371a008d",
+            "passwd": "e10adc3949ba59abbe56e057f20f883e"
+          },
+          {
+            "user": "d6ed65e0-ef3c-11ea-886b-edf733507a0a",
+            "passwd": "d7f54bc441fd5ec59b682864755bc0e3"
+          },
+          {
+            "user": "c45a6f70-ef98-11ea-84ed-1750b12129bd",
+            "passwd": "42d91748e5b4bb2c891aebb073565024"
+          },
+          {
+            "user": "7246a3c0-f00b-11ea-b887-fdf91feeb97f",
+            "passwd": "bca8f048f2c5ff787950eb1ba088c70e"
+          },
+          {
+            "user": "26e81ed0-f039-11ea-8a59-b74d51a987d3",
+            "passwd": "79b7d83092c55b9852f1f98d13688bfc"
+          },
+          {
+            "user": "d3e0f400-f10f-11ea-8a59-b74d51a987d3",
+            "passwd": "36211bbb1561838f59a30d55d5ea4778"
+          },
+          {
+            "user": "6fd7e360-f1dc-11ea-91a4-edc3871e78a7",
+            "passwd": "a8ed38fcdbf0c933fd7b712bbaae25d1"
+          },
+          {
+            "user": "fa28a730-f25d-11ea-91a4-edc3871e78a7",
+            "passwd": "d6149b2608fc476097379e0d296fe8db"
+          }
+        ],
+        "udp": true,
+        "timeout": 0,
+        "userLevel": 1
+      }
+    }
+  ],
+  "inboundDetour": [
+    {
+      "listen": "127.0.0.1",
+      "port": 1989,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api"
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        
+      },
+      "tag": "blocked"
+    },
+    {
+      "protocol": "mtproto",
+      "settings": {
+        
+      },
+      "tag": "tg-out"
+    }
+  ],
+  "dns": {
+    "servers": [
+      "https+local://cloudflare-dns.com/dns-query",
+      "1.1.1.1",
+      "1.0.0.1",
+      "8.8.8.8",
+      "8.8.4.4",
+      "localhost"
+    ]
+  },
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [
+      
+    ],
+    "settings": {
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "api"
+          ],
+          "outboundTag": "api"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "0.0.0.0/8",
+            "10.0.0.0/8",
+            "100.64.0.0/10",
+            "127.0.0.0/8",
+            "169.254.0.0/16",
+            "172.16.0.0/12",
+            "192.0.0.0/24",
+            "192.0.2.0/24",
+            "192.168.0.0/16",
+            "198.18.0.0/15",
+            "198.51.100.0/24",
+            "203.0.113.0/24",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "blocked"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "tg-in"
+          ],
+          "outboundTag": "tg-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "domain:epochtimes.com",
+            "domain:epochtimes.com.tw",
+            "domain:epochtimes.jp",
+            "domain:epochtimes.fr",
+            "domain:epochtimes.de",
+            "domain:epochtimes.ru",
+            "domain:epochtimes.co.il",
+            "domain:epochtimes.co.kr",
+            "domain:epochtimes-romania.com",
+            "domain:erabaru.net",
+            "domain:lagranepoca.com",
+            "domain:theepochtimes.com",
+            "domain:ntdtv.com",
+            "domain:ntd.tv",
+            "domain:ntdtv-dc.com",
+            "domain:ntdtv.com.tw",
+            "domain:minghui.org",
+            "domain:renminbao.com",
+            "domain:dafahao.com",
+            "domain:dongtaiwang.com",
+            "domain:falundafa.org",
+            "domain:wujieliulan.com",
+            "domain:ninecommentaries.com",
+            "domain:shenyun.com"
+          ],
+          "outboundTag": "blocked"
+        },
+        {
+          "type": "field",
+          "protocol": [
+            "bittorrent"
+          ],
+          "outboundTag": "blocked"
+        }
+      ]
+    },
+    "strategy": "rules"
+  },
+  "transport": {
+    "kcpSettings": {
+      "uplinkCapacity": 100,
+      "downlinkCapacity": 100,
+      "congestion": true
+    }
+  }
 }
