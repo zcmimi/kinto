@@ -3,9 +3,9 @@
     "description": "deploy v2ray tor on heroku",
     "keywords": ["v2ray"],
     "env": {
-        "UUID": {
-            "description": "v2ray UUID",
-            "value": "c95ef1d4-f3ac-4586-96e9-234a37dda068"        
+        "CONFIG": {
+            "description": "v2ray CONFIG",
+            "value": "https://raw.githubusercontent.com/yeahwu/kinto/master/config.json"        
         }
     },
     "website": "https://starts.sh",
